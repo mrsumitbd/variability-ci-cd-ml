@@ -1,4 +1,4 @@
-RepoName,RepoType,GitHubURL,TraviFileURL
+RepoName,RepoType,GitHubURL,TravisFileURL
 duxuhao/Feature-Selection,Applied,https://github.com/duxuhao/Feature-Selection.git,https://github.com/duxuhao/Feature-Selection/blob/master/.travis.yml
 kakaobrain/torchgpipe,Applied,https://github.com/kakaobrain/torchgpipe.git,https://github.com/kakaobrain/torchgpipe/blob/master/.travis.yml
 ternaus/robot-surgery-segmentation,Applied,https://github.com/ternaus/robot-surgery-segmentation.git,https://github.com/ternaus/robot-surgery-segmentation/blob/master/.travis.yml
