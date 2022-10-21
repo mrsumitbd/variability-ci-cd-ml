@@ -1,0 +1,64 @@
+dist: xenial
+language: python
+services:
+  - docker
+python:
+  - "3.7"
+sudo: false
+env:
+  global:
+    - CONDA_HOME=$HOME/conda
+    - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
+    - SEGFAULT_SIGNALS=all
+before_install:
+  - python --version
+  - uname -a
+  - lsb_release -a
+install:
+  - make install
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+jobs:
+  include:
+    - stage: test
+      script: make test-all
+    - stage: test
+      script: make docs
+    - stage: deploy
+      if: type = push AND fork = false AND tag IS present
+      script: skip
+      before_deploy:
+        - docker --version
+        - echo "$DOCKER_PASSWORD" | docker login --username="$DOCKER_USERNAME" --password-stdin
+        - echo "ENV GIT_SHA ${TRAVIS_COMMIT}" >> Dockerfile
+      deploy:
+        provider: pypi
+        user: "${PYPI_USERNAME}"
+        password: "${PYPI_PASSWORD}"
+        skip_existing: true
+        on:
+          tags: true
+      after_deploy:
+        - docker build -t ${DOCKER_REPO}:${TRAVIS_TAG} -t ${DOCKER_REPO}:latest -t thelper:base -f Dockerfile .
+        - docker build -t ${DOCKER_REPO}:${TRAVIS_TAG}-geo -t ${DOCKER_REPO}:latest-geo -t thelper:geo -f Dockerfile-geo .
+        - docker run -t ${DOCKER_REPO}:latest thelper --version
+        - travis_wait 50 docker push ${DOCKER_REPO}
+    - stage: conda_deploy
+      if: type = push AND fork = false AND tag IS present
+      script:
+        - wget -q https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+        - bash miniconda.sh -b -p $HOME/miniconda
+        - export PATH="$HOME/miniconda/bin:$PATH"
+        - rm miniconda.sh
+        - conda config --set anaconda_upload yes
+        - conda config --set always_yes yes
+        - conda config --set changeps1 no
+        - conda config --prepend channels conda-forge
+        - conda config --prepend channels pytorch
+        - conda update -q conda
+        - conda install conda-build conda-verify anaconda-client
+        - conda info -a
+        - travis_wait 50 conda build --token $CONDA_TOKEN --user $CONDA_USERNAME ci/
+

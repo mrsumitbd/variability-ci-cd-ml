@@ -1,0 +1,26 @@
+language: python
+
+# Enable 3.7 without globally enabling sudo and xenial dist for other build jobs
+matrix:
+  include:
+    - python: 2.7
+    - python: 3.4
+    - python: 3.5
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+      sudo: true
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls pytest-xdist pytest-cov
+# Turn off email notifications
+notifications:
+  email: false
+# command to run tests
+script:
+  py.test --cov-report= --cov=pic2vec --boxed tests/ -vvvvs
+# Coveralls
+after_success:
+  coveralls

@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.6'
+cache: pip
+script:
+- script/test
+deploy:
+  provider: pypi
+  skip_cleanup: true
+  skip_existing: true
+  user: Anne.Schuth
+  password:
+    secure: 2m9Iv6DBgdx+70+q4cGLCwkHPZlebeYhzVLZV6av63s4E0sqZmZJ1ovpeFJh5xnhaCqXYTXB8BqShVzTy8bgE6P8ocAa2vtuI5pxSiPBuwbBfZzCj4aUN9QHmT03WYiTG0MznpmvuTuUDtc432IkKSneTa0KBIVgO/Gnw/Fg5c4IGgdDEuxTXF9j5G6pv6lnhOJuhaB3/ZTfurSDCw6micildVUQzfB+a8MQ9R/XWwOPVCiyPnirfo4cuSDZ7Ad/XtBJefK7CB+XNXE+H6OYi37GhqMlIabYSzXHacz006TS1RpE93V3MLbINSoCz/3qqUBqIr12GG382fa/RuwlGu2FECb0itQp4yhBdegPiyVPjSjmoa+tmwr8EehiMJObRp8L+mCTWAaCshNgqbJDSrCutB7I9IZM/tFveVMW7zPyp6JDo1s2J/b5InEdVpldUCTTHphz9ICxXvuibEbSdce5HkDJaz68Vs4utc96+cHOwIIbWZknElOFcLD7jjdACINrPC/xCIwXjyKDVaFRj/SuItSKLZGJs7gw1Nu+UX/6vQ/H+oedonMoCTCnGPR/BiVqh61CPxxmoFDyZJcSIHc49Uc9y7nnLXkq0HgyAdtsZl1+Y/H/L/MBbWSKaOFC24yxWaS2yu7AIAJ8n/JtxZGc6MOPH1TOyjdLkLV04N4=
+  on:
+    branch: master

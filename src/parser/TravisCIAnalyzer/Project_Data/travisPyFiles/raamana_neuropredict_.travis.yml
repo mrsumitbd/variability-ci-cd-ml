@@ -1,0 +1,17 @@
+language: python
+cache: pip
+matrix:
+  include:
+  - python: "3.6"
+
+install:
+  - pip install -r requirements_dev.txt
+  - pip install -e .
+  - pip install pytest-cov
+
+script:
+  - travis_wait 999 pytest --verbose --cov=. neuropredict/tests/test_regress_workflow.py neuropredict/tests/test_classify_workflow.py neuropredict/tests/test_metrics.py neuropredict/tests/test_CVResults_classes.py neuropredict/tests/test_missing_data.py
+
+after_success:
+- codecov
+

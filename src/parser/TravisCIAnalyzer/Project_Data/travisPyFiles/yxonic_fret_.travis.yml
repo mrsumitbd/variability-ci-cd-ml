@@ -1,0 +1,27 @@
+language: python
+
+matrix:
+  include:
+    - python: 3.4
+    - python: 3.5
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+      sudo: true
+    - name: "Python 3.7.5 on macOS"
+      os: osx
+      osx_image: xcode11
+      language: shell
+    - name: "Python 3.7.5 on Windows"
+      os: windows
+      language: shell
+      before_install:
+        - choco install python --version 3.7.5
+      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+
+install:
+  - pip3 install -e .[test]
+
+script:
+  - pytest
+  - CODECOV_TOKEN="fb15f8d9-5fde-430c-ba91-aee5c0189fe8" bash <(curl -s https://codecov.io/bash)

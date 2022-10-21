@@ -1,0 +1,73 @@
+sudo: false
+language: python
+cache: pip
+# Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
+python:
+  - 3.4
+  - 3.5
+  - 3.6
+  - "pypy3.5"
+env: # important, without the top-level env, no job will be allowed to fail.
+matrix:
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+  allow_failures:
+    - python: "pypy3.5"
+env:
+  global:
+    - DATABASE_URL=postgresql://localhost/flask_psi_test
+    - TEST_DATABASE_URL=postgresql://localhost/flask_psi_test
+    - TESTING="True"
+    - CI_MODE="True"
+    - DEBUG="False"
+    - FLASK_APP=psi.cli:application
+    - SECURITY_PASSWORD_SALT=insecure-test-mode
+    - SECRET_KEY=insecure-key
+services:
+  - postgresql
+before_script:
+  - psql -U postgres -c 'CREATE DATABASE flask_psi_test;'
+before_install:
+  - pip install codecov codeclimate-test-reporter
+install:
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.4" ]]; then (pip install -r etc/requirements/test.txt); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.5" ]]; then (pip install -r etc/requirements/test.txt); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.6" ]]; then (pip install -r etc/requirements/test.txt); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "3.7" ]]; then (pip install -r etc/requirements/test.txt); fi
+  - if [[ $TRAVIS_PYTHON_VERSION == "pypy3.5" ]]; then (pip install -r etc/requirements/test-pypy.txt); fi
+  - mv psi/migrations/alembic.ini.template psi/migrations/alembic.ini
+  - mkdir -p psi/app/static/uploaded
+script:
+  - flask test 
+after_success:
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then (codeclimate-test-reporter); fi
+  - export BUILD_DATE_FORMAT="+%Y-%m-%d"
+  - export BUILD_DATE=`date $BUILD_DATE_FORMAT`
+  - echo "$TRAVIS_COMMIT $TRAVIS_BUILD_NUMBER $TRAVIS_BUILD_ID $TRAVIS_BRANCH $TRAVIS_TAG $BUILD_DATE"
+  - echo "$TRAVIS_COMMIT $TRAVIS_BUILD_NUMBER $TRAVIS_BUILD_ID $TRAVIS_BRANCH $TRAVIS_TAG $BUILD_DATE" > swtag
+  - if [[ $TRAVIS_PYTHON_VERSION == 3.4 ]]; then (codecov); fi
+
+
+deploy:
+  - provider: heroku
+    skip_cleanup: true
+    api_key: $HEROKU_AUTH_TOKEN
+    app: psi-dev
+    on:
+      all_branches: true
+      python: 3.5
+    run:
+    - restart
+  - provider: pypi
+    user: betterlife
+    password: $PYPI_PASSWORD
+    skip_cleanup: true
+    distributions: "sdist bdist_wheel"
+    on:
+      tags: true
+      python: 3.6
+
+notifications:
+    slack: muyantech:$SLACK_TOKEN

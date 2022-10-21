@@ -1,0 +1,22 @@
+language: python
+cache: pip
+
+python:
+  - "3.6"
+
+install:
+    - pip install -r requirements.txt
+    - pip install -U pytest pytest-cov flake8 pylint codecov sphinx mock
+    - yarn
+
+script: make test
+
+after_success:
+    - codecov --token 72508925-01d9-4828-b500-4c267c61e8a5
+
+branches:
+  only:
+  - master
+
+notifications:
+  email: false

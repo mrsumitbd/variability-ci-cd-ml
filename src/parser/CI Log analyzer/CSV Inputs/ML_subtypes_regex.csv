@@ -1,0 +1,36 @@
+Regex,JobFailType,MLFail_Subtype
+ModuleNotFoundError: (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,Ml_module_not_found
+No module named (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,Ml_module_not_found
+ImportError.* (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,Ml_module_not_found
+ImportError: (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel) requires .*,TestError,ML_module_version_problem
+NameError: name ('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,Ml_module_not_found
+Could not load dynamic library 'libcuda.so',TestError,Cuda_Problem
+The learner stored .* is incompatible,TestError," Model_problem"
+The model stored .* is incompatible,TestError," Model_problem"
+tensorflow.* failed call to cuInit:,TestError,Cuda_Problem
+Error: cannot read training set,TestError,DataSet_Problem
+Error: cannot read test.* set,TestError,DataSet_Problem
+ERROR: Failed building wheel for ('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,ML_module_building_problem
+Please upgrade  (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit),TestError,ML_module_version_problem
+cannot import .* from (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),TestError,Ml_module_not_found
+RuntimeError: module compiled against API version,TestError,ML_module_version_problem
+InvalidDomain,TestError,Model_problem
+AssertionError: [+-]?([0-9]+\.?[0-9]*|\.[0-9]+),TestFail,AssertionError_ML
+Exception: Model prediction,TestFail,AssertionError_ML
+AssertionError: .* not less than,TestFail,AssertionError_ML
+Could not load dynamic library 'cudart64_101.dll',TestFail,Cuda_Problem
+Could not load dynamic library 'libcuda.so',TestFail,Cuda_Problem
+AssertionError: .*model' != .*model,TestFail,AssertionError_ML
+FAIL: .* prediction,TestFail,AssertionError_ML
+FAIL: .* pop,TestFail,AssertionError_ML
+AssertionError: .* attribute,TestFail,AssertionError_ML
+AssertionError: Quantities,TestFail,AssertionError_ML
+UnsupportedDialogueModelError,TestFail,AssertionError_ML
+ImportError: No module named (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),BuildError,Ml_module_not_found
+Configuring Module: cuda;No such file or directory,BuildError,Cuda_Problem
+Could not load dynamic library '',BuildError,Library_Problem
+Could not load dynamic library 'libcuda.so',BuildError,Cuda_Problem
+Could not load dynamic library 'libnvinfer.so.6',BuildError,Library_Problem
+Could not load dynamic library 'libcupti.so',BuildError,Cuda_Problem
+git clone .* (?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel),BuildError,Ml_DepInstall_problem
+(?i)('tensorflow|'pandas|'matplotlib|'tensorboard|'sklear|'numpy|'mlflow|'onnx|'keras|'coreml|'scikit|'openbabel).*: No such file or directory,BuildError,Ml_module_not_found

@@ -1,0 +1,21 @@
+language: python
+sudo: required
+
+python:
+  - "3.5"
+  - "3.6"
+
+before_install:
+  - script/up
+
+script:
+  - script/test
+
+jobs:
+  include:
+    - stage: distribute
+      python: "3.6"
+      if: branch = master AND type != pull_request
+      install: skip
+      script:
+        - script/distribute

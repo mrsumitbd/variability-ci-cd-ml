@@ -1,0 +1,56 @@
+dist: xenial
+language: python
+
+matrix:
+  include:
+    - name: "Py35, Chainer v6"
+      python: "3.5"
+    - name: "Py36, Chainer v6, ONNX 1.4.1"
+      python: "3.6"
+      env:
+        - ONNX_VER="1.4.1"
+    - name: "Py36, Chainer v6"
+      python: "3.6"
+    - name: "Py37, Chainer v6, ONNX 1.5.0"
+      python: "3.7"
+      env:
+        - ONNX_VER="1.5.0"
+    - name: "Py37, Chainer v6"
+      python: "3.7"
+      env:
+        - ONNX_CHAINER_DEPLOY_JOB=1
+
+addons:
+  apt:
+      sources:
+        - ubuntu-toolchain-r-test
+      packages:
+          - gcc-7
+          - g++-7
+
+notifications:
+  email: false
+
+before_install:
+  - pip install 'chainer<7.0.0'
+  - pip install -U -e .[travis]
+  - if [[ $ONNX_VER != "" ]]; then pip install onnx==$ONNX_VER; fi
+  - pip list -v
+
+script:
+  - flake8
+  - autopep8 -r . --dif --exit-code
+  - pytest -m "not gpu" -x -s -vvvs tests/ --cov onnx_chainer
+  - if [[ $ONNX_CHAINER_DEPLOY_JOB == 1 ]]; then pushd docs && make doctest && popd; fi
+
+after_success:
+  - if [[ $ONNX_CHAINER_DEPLOY_JOB == 1 ]]; then codecov; fi
+
+deploy:
+  - provider: pypi
+    user: $PYPI_MAINTAINER_NAME
+    password: $PYPI_MAINTAINER_PASS
+    skip_cleanup: true
+    on:
+      tags: true
+      condition: $ONNX_CHAINER_DEPLOY_JOB == 1

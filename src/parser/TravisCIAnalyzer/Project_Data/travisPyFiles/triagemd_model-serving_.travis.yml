@@ -1,0 +1,25 @@
+language: python
+
+python:
+  - 3.6
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      install:
+        - pip install --upgrade pip
+        - pip install --upgrade -r requirements.txt
+        - travis_wait docker-compose up -d
+        - while ! nc -z localhost 9000; do sleep 1; done # wait for serving to start
+      script:
+        - script/test
+
+    - stage: distribute
+      if: branch = master AND type != pull_request
+      install: skip
+      script:
+        - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+        - script/distribute;

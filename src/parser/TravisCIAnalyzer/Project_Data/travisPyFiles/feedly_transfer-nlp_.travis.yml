@@ -1,0 +1,13 @@
+dist: xenial
+language: python
+python:
+    - "3.6"
+    - "3.7"
+before_install:
+    - sudo rm -f /etc/boto.cfg
+install:
+    - pip install .[torch]
+    - pip install green
+script:
+    - pip install tensorboard>=1.14 future>=0.17.1 pillow>=6.0.0 tqdm>=4.31.1 pandas>=0.24.1
+    - green

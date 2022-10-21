@@ -1,0 +1,50 @@
+# Config file for automatic testing at travis-ci.org
+# This file will be regenerated if you run travis_pypi_setup.py
+sudo: required
+os: linux
+dist: trusty
+
+language: python
+python:
+  - "3.7"
+  - "3.6"
+  - "3.5"
+  - "3.4"
+
+notifications:
+  email: false
+
+git:
+  submodules: false
+
+# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install:
+  - pip3 install -r requirements.txt
+  - pip3 install -U tox-travis
+  - pip3 install codecov
+
+
+# command to run tests, e.g. python setup.py test
+script:
+  - python setup.py install
+  # - git submodule update --init --recursive
+  - git clone https://github.com/baojie/senna senna
+  - git lfs logs last
+  - coverage run pntl/tools.py 
+  - pntl -SE ./pntl/senna
+  - pntl -SE ./pntl/senna -B true
+  - pntl -SE ./pntl/senna -S 'I am gonna make him an offer he can not refuse.'
+
+
+# After you create the Github repo and add it to Travis, run the
+# travis_pypi_setup.py script to finish PyPI deployment setup
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: jawahar273
+  password:
+    secure: jawahar2731
+  on:
+    tags: true
+    repo: jawahar273/practNLPTools-lite
+    python: 3.5

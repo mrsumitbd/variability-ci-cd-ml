@@ -1,0 +1,125 @@
+﻿Regex,Failure Type,SubType,ML Specific,Notes
+(?!(pytest))\b\w+: error: unrecognized arguments:,Build Error,Other Command Error,No,
+error in .* command,Build Error,Other Command Error,No,
+Error: No such command,Build Error,Resource Not Found,No,
+Failed to clone from GitHub,Build Error,Dependency install Problem,No,
+Failed to install,Build Error,Dependency install Problem,No,
+ninja .* exited with [1-9]+,Build Error,Dependency install Problem,No,
+Failed to load Module,Build Error,Resource Not Found,No,"Module Not loaded, can be test fail too"
+fatal: destination path '*',Build Error,Resource Not Found,No,
+make: (?!(test|Test))\b\w+ Error [1-9]+,Build Error,Dependency install Problem,No,May also indicate test failure depending on make file
+make (?!(test|Test))\b\w+ exited with [1-9]+,Build Error,Dependency install Problem,No,May also indicate test failure depending on make file
+ant .* exited with [1-9]+,Build Error,Dependency install Problem,No,May also indicate test failure depending on make file - NEW
+make(?!((\s)*test|(\s)*Test)).* exited with [1-9]+,Build Error,Dependency install Problem,No,May also indicate test failure depending on make file
+Plugin 'pytest_cov' could not be loaded,Build Error,Resource Not Found,No,
+No such file or directory,Build Error,Resource Not Found,No,can be test fail too
+Segmentation fault,Build Error,Memory Error,No,can be test fail too
+The program '[A-Za-z0-9]+' is currently not installed,Build Error,Resource Not Found,No,
+line [0-9]+: .*: .*argument.,Build Error,Other Command Error,,
+build_wheel.sh .* failed and exited with [1-9]+,Build Error,Other Command Error,, NEW
+"The command ""python -c ""import .*"""" exited with [1-9]+",Build Error,Dependency install Problem,No,
+CMake Error,Build Error,Dependency install Problem,No,
+Unknown option .* Exiting,Build Error,Other Command Error,No,
+rake aborted!,Build Error,Dependency install Problem,No,
+flake8.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+mypy.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+pylint.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+pycodestyle.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+black .* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+coverage .* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+ci_checks.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+ci.*check.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,
+lint.* failed,Code Analysis Error,Linting Failed,No,
+coverage: commands failed,Code Analysis Error,General CA Fail,No,
+python .*validator.* exited with [1-9]+,Code Analysis Error,General CA Fail,No,NEW
+ERROR: Test if pep8 is respected,Code Analysis Error,Linting Failed,No,
+FAIL Required test coverage of [0-9]+% not reached,Code Analysis Error,Code Coverage Failed,No,
+FAILED .*::FLAKE8,Code Analysis Error,Linting Failed,No,
+Failed enforcement,Code Analysis Error,Linting Failed,No,"Linting failed, code does not meet requirments"
+Messages Found: [1-9]+,Code Analysis Error,Linting Failed,No,
+"pyflakes verktyg  ;  (.+):([0-9]+): (.+) ",Code Analysis Error,Linting Failed,No,From Travis Listener
+warning: check: Cannot analyze code,Code Analysis Error,CA Exception,No,
+Deploying application ; Already up-to-date!,Deployment Error,up to date error,No,
+failed to deploy,Deployment Error,General deployment error,No,
+npm ERR! publish Failed,Deployment Error,General deployment error,No,
+"The command ""cibuildwheel --output-dir wheelhouse"" exited with [1-9]+",Deployment Error,General deployment error,No,
+docker build .* failed and exited with [1-9]+,Deployment Error,General deployment error,No,NEW
+"=+ [1-9]+ error(s)? in ",Test Error,General Test Error,No,Errors during test execution ( summary of total number of errors)
+(py|pytest)\b\w+: commands failed,Test Error,Test Collection Error,No,
+"_+ ERROR at setup of ",Test Error,Test Collection Error,No,Error before test execution (during the test setup phase)
+_+ ERROR collecting,Test Error,Test Collection Error,No,"Error during test collection ( Test file not found, import module error)"
+ERROR: InvocationError for command,Test Error,Test Environmet Error,No,command within test script not found
+"FAILED \(failures=[0-9]+, errors=[1-9]+\)",Test Error,General Test Error,No,
+"FAILED \((failures=[0-9]+,)?errors=[1-9]+\)",Test Error,General Test Error,No,
+"FAILED \(SKIP=([0-9]+), errors=([1-9]+), failures=([0-9]+)\)",Test Error,General Test Error,No,From Travis Listener
+"FAILED \(SKIP=([0-9]+), errors=([1-9]+()|, failures=([1-9]+)\))?",Test Error,General Test Error,No,From Travis Listener
+ModuleNotFoundError: No module named,Test Error,General Test Error,No,
+NameError: name,Test Error,General Test Error,No,
+no tests ran in,Test Error,General Test Error,No,Error halting all test execution
+pytest: error:,Test Error,General Test Error,No,
+Aborted .* pytest,Test Error,Test Collection Error,No,
+ERROR: Failure:,Test Error,Test Collection Error,No,
+ERROR:   py[0-9]+: could not install deps,Test Error,Test Collection Error,No,
+unknown environment '.*',Test Error,"Test Environment Error ",No,Tox can not identify the environment
+AssertionError: [+-]?([0-9]+\.?[0-9]*|\.[0-9]+),Test Fail,Assertion Fail,Yes,"Failure in meeting tolerance for a specific ML metric ( accuracy, precision,..)"
+- Failed: [1-9]+,Test Fail,General Test Fail,No,
+" (?<failed>[0-9]+) failed, (?<passed>[0-9]+) passed(, (?<skipped>[0-9]+) skipped)?(, (?<warning>[0-9]+) warnings) in (?<time>[0-9\.]+)s ",Test Fail,General Test Fail,No,From Travis Listener
+: Exception,Test Fail,Exception Fail,No,Uncaught exception during testing
+=+ [1-9]+ failed,Test Fail,General Test Fail,No,
+=+ FAILURES =+,Test Fail,General Test Fail,No,
+" == ([1-9]+) failed, ([0-9]+) passed, ([0-9]+) skipped, ([0-9]+) pytest-warnings in ([0-9\.]+) seconds === ",Test Fail,General Test Fail,No,From Travis Listener
+Illegal instruction: .*test,Test Fail,General Test Fail,,
+(FAIL): (.+)( \((.+)\))?,Test Fail,General Test Fail,No,From Travis Listener
+"[1-9]+ xfailed,",Test Fail,General Test Fail,No,
+FAILED (\s)+ \[,Test Fail,General Test Fail,No,
+\b(\w+)\b.*FAIL(?=.*\b\1\b),Test Fail,General Test Fail,No,
+^(FAIL): (.+),Test Fail,General Test Fail,No,From Travis Listener
+error: Module has no attribute,Test Fail,General Test Fail,No,
+Exception :,Test Fail,Exception Fail,No,Uncaught exception during testing
+make(:)? .*(test|Test).* Error [1-9]+,Test Fail,Make Fail,No,May also indicate test failure depending on make file
+make(:)? .*(test|Test).* exited with [1-9]+,Test Fail,Make Fail,No,May also indicate test failure depending on make file
+SUMMARY +([0-9]+)\/([0-9]+) tasks and ([0-9]+)\/([0-9]+) tests failed,Test Fail,General Test Fail,No,From Travis Listener
+INTERNALERROR>,Test Fail,General Test Fail,No,
+"FAILED \(failures=[1-9]+(, errors=[0-9]+)?\)",Test Fail,General Test Fail,No,
+"FAILED \(SKIP=([0-9]+)(, errors=([0-9]+))?, failures=([1-9]+)\)",Test Fail ,General Test Fail,No,From Travis Listener
+"command "".*"" exited with 137",Travis Error,Time out fail,No,Time limit exceeded
+Failed to connect to travis-cache-production,Travis Error,Connection Error,No,Cache access problem
+GPG error,Travis Error,Security Error,No,Security error in unix environment
+The job exceeded the maximum log length,Travis Error,Log length error ,No,Max log length exceeded
+Cannot allocate memory,Travis Error,MemoryAllocationFail,No,OutofRam
+not enough memory,Travis Error,MemoryAllocationFail,No,OutofRam
+lint .* exited with 1,Code Analysis Error,General CA Fail,No,
+bones-check .* exited with 1,Code Analysis Error,General CA Fail,No,
+/home/travis/build.sh: .* Terminated,Build Error,Script Terminated,No,
+"test.*\.sh.*"" exited with [1-9]+",Test Fail,Test Script Fail,No,
+"test.*\.py.*"" exited with [1-9]+",Test Fail,Test Script Fail,No,
+__main__:.*: (?!0)[0-9]+ fails,Test Fail,General Test Fail,No,
+TypeError:,Build Error,Gemeral Build Error,No,
+Command failed:,Build Error,General command fail,No,can be test fail too
+AttributeError:,Build Error,General build error,No,can be test fail too
+Interrupted: [0-9]+ errors during collection,Test Error,Error during test collection,No,
+ValueError:,Build Error,General build error,No,
+sphinx-build failed,Build Error,Sphinx build Error,No,
+No output has been received in the last;The build has been terminated,Travis Error, Not output Timeout,No,
+The job exceeded the maximum time limit,Travis Error, Timeout,No,
+The log length has exceeded the limit of,Travis Error, Log length,No,
+TESTS FAILED,Test Fail,General Test Fail,No,
+unknown command,Build Error,Unknown command,No,
+ImportError:,Build Error, Import problem,No,can be test fail too
+RuntimeError:,Build Error, Runtime problem,No,can be test fail too
+cp: .* is not a directory,Build Error, FS problem,No,can be test fail too
+collect2: error:,Build Error, CPP collection problem,No,
+ERROR: File or directory already exists,Build Error,FS problem,No,can be test fail too
+ConnectionResetError:,Build Error,Connection Error,No,can be test fail too
+Errors were encountered while processing:,Build Error,Connection Error,No,
+"The command ""bones-check .*"" failed and exited with 1 during",Build Error,General script Error,No,
+./.*.sh: line [0-9]+: .*: --: invalid option,Build Error,General script Error,No,
+rm: cannot remove,Build Error,General script Error,No,
+Error response from daemon:,Build Error,General script Error,No,
+Failed to load Module,Build Error,General script Error,No,
+(?!python|coverage|py[A-Za-z0-9]+|pytest)\b\w+: commands failed,Build Error,General script Error,No,
+Error is not recoverable:,Build Error,General script Error,No,
+TypeError:,Build Error,General script Error,No,
+SyntaxError:,Build Error,General script Error,No,can be test fail too
+Command failed:,Build Error,General script Error,No,
+ERROR: unknown command,Build Error,General script Error,No,

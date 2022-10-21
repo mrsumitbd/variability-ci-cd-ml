@@ -1,0 +1,29 @@
+language: python
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+
+branches:
+  only:
+    - master
+
+addons:
+  apt:
+    packages:
+      - libarchive13
+      - hunspell
+      - hunspell-fr
+      - libhunspell-dev
+
+install:
+  - sqlite3 --version
+  - pip install tox
+
+script: tox
+
+notifications:
+  email: false
+
+dist: xenial
+sudo: false

@@ -1,0 +1,30 @@
+sudo: false
+
+os: linux
+
+python:
+  - "2.7"
+  - "3.5"
+
+language: python
+
+cache:
+  - pip
+
+install:
+  - pip install hacking
+  - pip install opencv-python
+  # disable cupy in travis
+  - cat requirements.txt | grep -v 'egg=cupy' > requirements.txt_
+  - mv requirements.txt_ requirements.txt
+  - pip install .
+
+script:
+  - flake8 .
+
+notifications:
+  email: false
+
+branches:
+  only:
+    - master

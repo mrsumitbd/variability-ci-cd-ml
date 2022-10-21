@@ -1,0 +1,41 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+services:
+  - docker
+git:
+  depth: false
+branches:
+  only:
+  - master
+  - develop
+install:
+  # Install Conda
+  - sudo apt-get update
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda init
+  - source /home/travis/.bashrc
+  - conda info -a
+  # Install crypr
+  - mv .env_template .env
+  - make create_environment
+  - conda activate crypto_predict
+  - make install_dev
+  - crypr-data --hours 1000
+  - crypr-features
+  - crypr-models --epochs 1 --verbose 0
+  # Deploy crypr API
+  - docker build -f ./docker/Dockerfile -t crypr-api .
+  - CONTAINER_ID=$(docker run -d -p 5000:5000 crypr-api)
+  - sh ./docker/wait_for_healthy.sh $CONTAINER_ID
+script:
+  - docker ps | grep -q crypr-api
+  - make test
+after_success:
+  - coveralls

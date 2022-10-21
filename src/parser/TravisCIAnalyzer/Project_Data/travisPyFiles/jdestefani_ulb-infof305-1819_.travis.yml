@@ -1,0 +1,29 @@
+language: python
+cache: pip
+
+python:
+    - "3.6"
+env:
+  global:
+  - GITHUB_USER="jdestefani"
+  - GITHUB_EMAIL="jacopo.de.stefani@gmail.com"
+  - REPO="ulb-infof305"
+  - GH_REPO="github.com/${GITHUB_USER}/${REPO}.git"
+
+install:
+  - pip install jupyter
+
+script:
+    - make
+
+after_success:
+  - MESSAGE=$(git log --format=%B -n 1 "${TRAVIS_COMMIT}")
+  - git config user.email ${GITHUB_EMAIL}
+  - git config user.name ${GITHUB_USER}
+  - git remote add origin-master "https://${GITHUB_TOKEN}@${GH_REPO}"
+  - git checkout master
+  - git add docs/*.html
+  - git commit -m "${MESSAGE}"
+  - git push --quiet --set-upstream origin-master master
+
+

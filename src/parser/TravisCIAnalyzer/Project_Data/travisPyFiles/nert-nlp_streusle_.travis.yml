@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.6'
+- '3.7'
+install: pip install tox-travis
+script: tox
+deploy:
+  provider: pypi
+  user: __token__
+  password:
+    secure: "d361OMq//ztUH73xzjkaB+9m3rgbBTnqQZOm6midGffTZwlFe6hM3B41gpM3xR1wdGuviEQj7QjCSq6sPum9EWDwviLzG7pCPHLB+ByZDUuJe3mbbol+CJfu3dT5LRu657iievhCLwZK0KhBdUIi3EH5wJh7nuVg6RbHMTpmBvsdMSMEoO/8TbZkYt2IKZ4uey7UNhGE/+ZOOJ4RGmxJHVSEAljYv3Kh9b9Gd/wxqWXye4rDcVdz/LJ2ktSaFTvCu0EQvs07+Y9qA8ff0BF9ocQffg+Q9slZ/sU4JjKTV2Wyn1EnlZAzB55mOQpETWaxcGyYTCwNGFJKuMYL8npaJ1YojY6Yb/k9yMB5pp1Qeuzw/p6TWE7An0h4xZhNDJkKlJktyjzUAaLbZZR8d0XQwvoX+pir995YkuD2XXsL8r2ITAdntmkyb9ygtCTRQ0uWBuldVdDFcTdzwQOxBnCo5VkvFEnmEZY88kfVazgIgBH+rsnCyH2O7D+08Dr1vBtPa/9cTA5SCc6XFLJrEORt24A2OXxEeRiqbYooiQCRIyovsJMGvOqrYG0WONxS734m2/47IQcXuInq0ef2BU3qqFVTmAS5DWIhMTypvdmFQHiwiYzUIMDAEc+CSemfIEiceTKUqdam8rPLS5yPn0ndNqy/3iW+IByHMIN2mIKih1A="
+  on:
+    tags: true
+  skip_existing: true
+  skip_cleanup: true

@@ -1,0 +1,26 @@
+language: python
+
+sudo: false
+dist: trusty
+group: edge
+
+python:
+   - "2.7"
+   - "3.6.1"
+
+os:
+  - linux
+
+before_install:
+  - "pip install flake8"
+
+script:
+  - "pip freeze"
+  - "flake8 epitator tests"
+  - "python run_doctests.py"
+  - "python -m unittest discover -p 'test_token_annotator.py'"
+  - "python -m unittest discover -p 'test_count_annotator.py'"
+  - "python -m unittest discover -p 'test_ne_annotator.py'"
+  - "python -m unittest discover -p 'test_pos_annotator.py'"
+  - "python -m unittest discover -p 'test_date_annotator.py'"
+  - "python -m unittest discover -p 'test_structured_data_annotator.py'"
