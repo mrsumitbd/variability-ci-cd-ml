@@ -1,6 +1,6 @@
 from github import Github
 
-class ProcessGithub:
+class ProcessGitHub(object):
     def __init__(self, token):
         self.g = Github(token)
         self.github_user = self.g.get_user()
@@ -22,14 +22,19 @@ class ProcessGithub:
 
     def list_contents(self, repo_name, folder_name = None):
         repo = self.github_user.get_repo(repo_name)
-        if folder_name is not None:
+        if folder_name is None:
+            contents = repo.get_contents("")
+
+        else:
             contents = repo.get_contents(folder_name)
-            while len(contents) > 0:
-                file_content = contents.pop(0)
-                if file_content.type == "dir":
-                    contents.extend(repo.get_contents(file_content.path))
-                else:
-                    print(file_content)
+
+        return sorted([content.name for content in contents])
+
+    def read_file_contents(self, repo_name, file_path):
+        repo = self.github_user.get_repo(repo_name)
+        file_contents = repo.get_contents(file_path)
+        print(file_contents.decoded_content.decode())
+        return file_contents.decoded_content.decode()
 
     def __del__(self):
         print("Freeing memory... Done!")
