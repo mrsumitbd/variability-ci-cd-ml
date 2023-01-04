@@ -1,0 +1,47 @@
+sudo: required
+
+language: python
+
+python: 3.7
+
+services:
+  - docker
+
+before_install:
+  - pip install --upgrade pip
+  - pip install --upgrade -r requirements.txt
+  - mkdir -p .cache/models
+
+script:
+  - script/test
+
+jobs:
+  include:
+    # Python versions, default model is MobileNet
+    - python: 2.7
+    - python: 3.5
+    - python: 3.6
+    - python: 3.7
+
+    # other models
+    - env: MODEL_NAME=inception_resnet_v2
+    - env: MODEL_NAME=nasnet_mobile
+    # not available in keras.applications yet
+    #- env: MODEL_NAME=resnet152
+    - env: MODEL_NAME=densenet_201
+    - env: MODEL_NAME=densenet_169
+    - env: MODEL_NAME=densenet_121
+    - env: MODEL_NAME=inception_v4
+    - env: MODEL_NAME=inception_v3
+    - env: MODEL_NAME=xception
+    - env: MODEL_NAME=resnet50
+    - env: MODEL_NAME=vgg16
+    - env: MODEL_NAME=vgg19
+    # out of memory error
+    #- env: MODEL_NAME=nasnet_large
+
+    - stage: distribute
+      if: branch = master AND type != pull_request
+      install: skip
+      script:
+       - script/distribute

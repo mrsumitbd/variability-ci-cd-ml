@@ -1,0 +1,32 @@
+language: python
+
+dist: xenial
+
+cache:
+  pip: true
+  cargo: true
+
+env:
+  global:
+    - RUST_BACKTRACE=1
+
+addons:
+  apt:
+    packages:
+      - libssl-dev
+      - lib32z1-dev
+      - gcc
+      - make
+
+python: "3.7"
+
+before_install:
+- sudo -E apt-get -yq update &>> ~/apt-get-update.log
+- source .travis/llvm.sh 6.0 xenial
+- source .travis/rust.sh
+
+install:
+  - pip install setuptools-rust numpy pandas pytest
+
+script:
+- bash -e -x .travis/test_multi_version.sh 6.0 3.7

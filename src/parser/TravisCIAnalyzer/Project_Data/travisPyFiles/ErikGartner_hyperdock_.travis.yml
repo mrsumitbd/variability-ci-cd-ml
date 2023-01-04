@@ -1,0 +1,38 @@
+language: python
+python:
+- '3.6'
+- '3.7'
+dist: xenial
+sudo: required
+sevices:
+- docker
+install:
+- pip install pipenv
+- pipenv install --system --ignore-pipfile --dev
+script:
+- nosetests --with-coverage -vse test/
+after_success:
+- coverage combine
+- codecov
+deploy:
+- provider: pypi
+  skip_cleanup: true
+  username: ErikGartner
+  password:
+    secure: EijtXneiUmMRQxPX9yv5rx6CLfaINk8TlLEdZBfjQY9CPDO444ggFMwmi5a5CXkBkDXo0OVcbUHvhPC5UcKsW/rEQ09ffMdPwy2ocHqzlMJfG+qJLR2c/GuAmCoW/pf3Z+p52NkmE62j9V/tbYrnbrpPpGjCnIr9wW+rI9I+9Zj8IW3c0pKNt8TrIkTFfqmXhylA5RSVSFw8Roqydjzcqn99NlMges8D3pNGohpA1S2UMi7erRhPbQaC/uZ3Yvnr0IQf9h+ndOiDh/4vxhMIKWle1JRdJB/tQkC0vaVAZnUd1ayGwskCbqGCjv+VaHllWjHrAOM+Kteq7Y5ipkTk4noI3Hz0BjKW7NVERxm7vksyL1X2bNphL0WcDFre1cf8iBz90hd2tvgmT4e1on2j8G4++xENkQfiDLG9OqVr9hnu7vlPBxu/8lQ9VEXhZGlYK2ZQLyU5xpKqxsO6Aq0retTgx6GgPFdqsnUt/2Lua35qKoKvZL/9AJb2tjNMZPG4PIUtBfg0RWczItbD1dsTB/5hgoFT/EnUIXOn/Aa+AyuMaE/ShmpubNGVl/5JcTG7CjnU62c9LRqXMQ0wW/0vnZ+8/e5hqcJnh4yLgByrarjGf0kSjqaq51wCBRUDr3hnp6CkXGemsRbpDw2B3DnkzGG3Ravi+VwyoFMQ+CG9PBg=
+  on:
+    branch: master
+    tags: true
+    python: '3.6'
+  skip_existing: true
+- provider: script
+  skip_cleanup: true
+  script: bash docker/deploy.sh
+  on:
+    branch: master
+    tags: true
+    python: '3.6'
+env:
+  global:
+  - secure: CgaXRu1OoDiI2oahxqajNliQl709PwsxmizCPZd3tMCtA6tNm8SBT5ddOo/I17t9Aql7K+GO3Hdwv1tcsFNiuz/TtJfRxir1gMubvV599zFXn6xvo/i5M2U+UAT6w33esda0RECnsofPqZpBEs2KJWaPd6EA9bRe7s4c72/wTMjwpES8YKxdQt/wWRrCXIX/rM5y9OEnjS0IASIdNiF7wT5iRNhAYwPLDzxp3QrU7rJ6Ot+yu06WaqW6STWxWm28Gv+2NWo9dO/OhQLXDVwbysO3LH1NjiKcAUHyGPX4cKslSYRNdNUM2viJuStvHKAk6Pbhfh7i8gp1CsM22GAaqvcNFoYl8cuVQCDJ7+wcxrGRwtpO6cjo+SD7z6c6ZTpY69sdJWpoO8TR37oAUBbLV99C8aYG3bwglTb0nAWzjLUKqw2RGKUeL+6koA0rg6wrgXKrtdRd5jX3JFOPI3u1bznpuoW+xrZsI1/0hkMF1ZRD4Am8h25wF+OnkAmDOUdZxXD8es2WCI2u6jL8MWWYc7UbnoRA+CDAJHQj/cdHuWR5r3kCkapp87kwZeUrXDn8qhTXPFLQ01ezb3nDhONApPJo1lK2V/4YQQeqsmO0Al2wwHFX5JcoI+inqQ4IZ3Pk0raFu0WPobHK1BWAAZZEUvvm8UKL19Sy5GaeeEI4Bfc=
+  - secure: gjcaiPOnX1TebLEwuR+rEpUGpnf2yO++w8JMvMpZwdUEKcRD6jUGcumCdka8D3qVdhrDQrNojT7hEk08a21Q6VdklZTVPZoiPYrHqzg4PbuSgJUcoee/5edGPA5WqIwAYVJJYkkYZE5jXJAJADAfYuOipilEn1RyO0sekVkoHo0xXmoaBAbTzNlIWnLG1rZ99xfKIwt6APxX+bfjbySfNNTusbERlBiBBxUJhh/G3WCS0foCsUzu8lCFFKL6QX9zS3a2a4zccCBHVsBVBcIUz+j1G28eLLzg+7dKmrg9v1j1FFc6q6CP233s8BQrRzgO3Xark94hqgPfFmk2fz8mJgU9S33fzTINOvXZ7wLazKMv66QLuw9BOBCgHYJ8Jr8PiGvaPRIXKrXN/UXXNxszVVdVz6UXzMOuU8bKOAn/PRZpJbCw+cOkqfe8WKVPGd0bQVUR3jp2Bfp+BXVeLKCLcmYAbUBURQfqvNrJqSBa4erB2sDD0JyLm9BIDiYk2cDnjGvyYDOC9GA5ENxfRQepOromwF8b3k8kE/92GbwK4NkROMHGKll7O6LZApSOZA2tfl6fIzq3IEFxcQ7nlHZ3j60JvYXp4qAN5nsAd1CRaDOJm1j4C1prW6c5wFSw8haCRrZC8WsI/vC95Nhx6fNNRswSTPAtL7y+P4VxKOfu+60=

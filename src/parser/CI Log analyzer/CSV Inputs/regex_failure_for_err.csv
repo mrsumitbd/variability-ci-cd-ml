@@ -1,0 +1,74 @@
+﻿Regex,Failure Type,ML Specific,Notes
+- Failed: [1-9]+,Test Fail,No,
+" (?<failed>[0-9]+) failed, (?<passed>[0-9]+) passed(, (?<skipped>[0-9]+) skipped)?(, (?<warning>[0-9]+) warnings) in (?<time>[0-9\.]+)s ",Test Fail,No,From Travis Listener
+: Exception,Test Fail,No,Uncaught exception during testing
+=+ [1-9]+ error(s)? in ,Test Error,No,Errors during test execution ( summary of total number of errors)
+=+ [1-9]+ failed,Test Fail,No,
+# =+ FAILURES =+,Test Fail,No,
+" == ([1-9]+) failed, ([0-9]+) passed, ([0-9]+) skipped, ([0-9]+) pytest-warnings in ([0-9\.]+) seconds === ",Test Fail,No,From Travis Listener
+# 403 Forbidden,Build Error,No,
+ant .* exited with [1-9]+,Build Error,No,
+python .*validator.* exited with [1-9]+,Code Analysis Error,No,
+flake8.* exited with [1-9]+,Code Analysis Error,No,
+docker build .* failed and exited with [1-9]+,Deployment Error,No,
+build_wheel.sh .* failed and exited with [1-9]+,Build Error,No,
+mypy.* exited with [1-9]+,Code Analysis Error,No,
+pylint.* exited with [1-9]+,Code Analysis Error,No,
+pycodestyle.* exited with [1-9]+,Code Analysis Error,No,
+black .* exited with [1-9]+,Code Analysis Error,No,
+lint.* failed,Code Analysis Error,No,
+(?!(pytest))\b\w+: error: unrecognized arguments:,Build Error,No,
+(FAIL): (.+)( \((.+)\))?,Test Fail,No,From Travis Listener
+(?!python|coverage|py[A-Za-z0-9]+|pytest)\b\w+: commands failed,Build Error,No,
+(py|pytest)\b\w+: commands failed,Test Error,No,
+coverage: commands failed,Code Analysis Error,No,
+"[1-9]+ xfailed,",Test Fail,No,
+FAILED (\s)+ \[,Test Fail,No,
+# \b(\w+)\b.*FAIL(?=.*\b\1\b),Test Fail,No,
+^(FAIL): (.+),Test Fail,No,From Travis Listener
+_+ ERROR at setup of ,Test Error,No,Error before test execution (during the test setup phase)
+_+ ERROR collecting,Test Error,No,"Error during test collection ( Test file not found, import module error)"
+AssertionError: [+-]?([0-9]+\.?[0-9]*|\.[0-9]+),Test Fail,Yes,"Failure in meeting tolerance for a specific ML metric ( accuracy, precision,..)"
+"command "".*"" exited with 137",Travis Error ,No,Time limit exceeded
+Deploying application \n Already up-to-date!,Deployment Error,No,
+error in .* command,Build Error,No,
+ERROR: InvocationError for command,Test error,No,command within test script not found
+error: Module has no attribute,Test Fail,No,
+Error: No such command,Build Error,No,
+ERROR: Test if pep8 is respected,Code Analysis Error,No,
+Exception :,Test Fail,No,Uncaught exception during testing
+FAIL Required test coverage of [0-9]+% not reached,Code Analysis Error,No,
+"FAILED \(failures=[0-9]+, errors=[1-9]+\)",Test Error,No,
+"FAILED \((failures=[0-9]+,)?errors=[1-9]+\)",Test Error,No,
+"FAILED \(failures=[1-9]+(, errors=[0-9]+)?\)",Test Fail ,No,
+FAILED .*::FLAKE8,Code Analysis Error,No,
+"FAILED \(SKIP=([0-9]+), errors=([0-9]+), failures=([1-9]+)\)",Test Fail ,No,From Travis Listener
+"FAILED \(SKIP=([0-9]+), errors=([1-9]+), failures=([0-9]+)\)",Test Error,No,From Travis Listener
+Failed enforcement,Code Analysis Error,No,"Linting failed, code does not meet requirments"
+Failed to clone from GitHub,Build Error,No,
+Failed to connect to travis-cache-production,Travis Error ,No,Cache access problem
+failed to deploy,Deployment Error,No,
+Failed to install,Build Error,No,
+Failed to load Module,Build Error,No,"Module Not loaded, can be test error too"
+fatal: destination path '*' already exists,Build Error,No,
+GPG error,Travis Error ,No,Security error in unix environment
+make: (?!(test|Test))\b\w+ Error [1-9]+,Build Error,No,May also indicate test failure depending on make file
+make: *(test|Test)* Error [1-9]+,Test Fail,No,May also indicate test failure depending on make file
+Messages Found: [1-9]+,Code Analysis Error,No,
+ModuleNotFoundError: No module named,Test Error,No,
+no tests ran in,Test Error,No,Error halting all test execution
+npm ERR! publish Failed,Deployment Error,No,
+npm ERR! publish Failed,Deployment Error,No,
+Plugin 'pytest_cov' could not be loaded,Build Error,No,
+pyflakes verktyg  ;  (.+):([0-9]+): (.+) ,Code Analysis Error,No,From Travis Listener
+pytest: error:,Test Error,No,
+No such file or directory,Build Error,No,can be test error too
+Segmentation fault,Build Error,No,can be test fail too
+SUMMARY +([0-9]+)\/([0-9]+) tasks and ([0-9]+)\/([0-9]+) tests failed,Test Fail,No,From Travis Listener
+"The job exceeded the maximum log length, and has been terminated",Travis Error ,No,Max log length exceeded
+The program '[A-Za-z0-9]+' is currently not installed,Build Error,No,
+unknown environment '*',Test error ,No,Tox can not identify the environment
+warning: check: Cannot analyze code,Code Analysis Error,No,
+Aborted .* pytest,Test Error,No,
+Cannot allocate memory,Travis Error,No,Out of Ram
+ERROR: Failure:,Test Error,No,

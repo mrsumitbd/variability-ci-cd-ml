@@ -1,0 +1,20 @@
+dist: trusty
+language: python
+python:
+  - 3.6
+
+install:
+  - pip install pipenv
+  - pipenv install --dev
+
+script:
+  - python -c "import keras.backend"
+  - sed -i -e 's/"backend":[[:space:]]*"[^"]*/"backend":\ "'tensorflow'/g' ~/.keras/keras.json;
+  - echo -e "Running tests with the following config:\n$(cat ~/.keras/keras.json)"
+  - KERAS_BACKEND=tensorflow pytest -vvv --cov=minutes test
+
+after_success:
+  - flake8
+  # Coveralls complains about f-strings, ignore this because we caught linting
+  # already in the flake8 step.
+  - coveralls --ignore-errors

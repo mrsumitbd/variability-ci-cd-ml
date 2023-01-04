@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+before_install:
+  - pip install --upgrade pytest
+install:
+- pip install 'setuptools>=18.5'
+- pip install -r requirements.txt
+script: python setup.py test
+after_success:
+  - python-codacy-coverage -r coverage.xml
+sudo: false
+cache: pip

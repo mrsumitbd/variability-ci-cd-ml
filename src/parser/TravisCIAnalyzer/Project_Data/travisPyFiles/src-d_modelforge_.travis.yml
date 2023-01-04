@@ -1,0 +1,66 @@
+language: python
+dist: bionic
+services:
+  - docker
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+  - "$HOME/google-cloud-sdk"
+_before_install: &_before_install
+  - openssl aes-256-cbc -K $encrypted_fc69f8f90972_key -iv $encrypted_fc69f8f90972_iv
+    -in .gcs.json.enc -out gcs.json -d || rm -f gcs.json
+  - gcloud version || true
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export
+    CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - gcloud version
+  - pip2 install --user google-compute-engine
+  - if [ -f gcs.json ]; then gcloud auth activate-service-account --key-file=gcs.json; fi
+_install: &_install
+  - pip install --upgrade pip
+  - pip install codecov
+  - pip install -e .
+_coverage: &_coverage
+  - SCRIPT="coverage run -m unittest discover"
+stages:
+  - style
+  - test
+  - name: deploy
+    if: tag =~ .*
+matrix:
+  fast_finish: true
+  include:
+    - stage: style
+      python: 3.7
+      env: SCRIPT="flake8 --count"
+      install:
+        - pip install -r requirements-lint.txt
+    - stage: test
+      python: 3.6
+      env: *_coverage
+      before_install: *_before_install
+      install: *_install
+    - stage: test
+      python: 3.7
+      env: *_coverage
+      before_install: *_before_install
+      install: *_install
+      after_success:
+        - codecov
+    - stage: deploy
+      python: 3.7
+      install:
+        - pip install --upgrade pip
+        - pip install twine
+      script:
+        - python3 setup.py bdist_wheel
+      deploy:
+        provider: script
+        script: twine upload dist/*py3-none-any* -u $PYPI_LOGIN -p $PYPI_PASS
+        skip_cleanup: true
+        on:
+          tags: true
+script:
+  - (eval "$SCRIPT")
+notifications:
+  email: false

@@ -1,0 +1,35 @@
+language: python
+
+python:
+  - "3.5"
+
+branches:
+  only:
+    - master
+    - develop
+
+cache:
+  pip: true
+
+before_install:
+  - pip install codecov
+
+install:
+  - pip install .
+  - python -m nalaf.download_data
+
+script:
+  - nosetests -a \"!slow\" --with-coverage
+# - python example_annotate.py -p 2581245
+
+after_success:
+  - codecov
+
+deploy:
+  provider: pypi
+  user: juanmirocks
+  password:
+    secure: kvCccZ19PR5gp3PuIvKzAhxANxMOjdkIt30lfBzrGXCVS/WI8Oj/ChvEiWSILI/ZsT/8lJfUvkezn6cBr2TmTm5KakHmeWzpK6cgJMcDYL26Sl1a52fGH228o3HLxb0m8B4C30isqegSzOUVSfRFDKT0CYrDIwheA0xxyGocg5FpPAb+4e+iaaMK0G7kJVNvxnAMCXeaQyoEwrd39dzisCpIRjQpFkFirVvd6bOow/dLrbKWFfJK2hF+IasR7BkUd6gNbr/+c9ANHwNTLF1/w8KO67FoCYwaP7tdEN8NrcsBUSXl2CL74nQz5y34OW4SQqAH0cV78sp+mH5amEvPTKqwpoMJSp6R45vTSpOyrRmt+dsk42s6ZK1su/ldIGl5dxXEjE5nFee59w1CPtrNM4cFpv83zdkhcRo8hLgyRt9V4N77mmzbNS5QJkCuyg1ZkrldBI0R5FbF3H8CGHLojGZwSVFy7VLcL0pXipFFPiDINULGfuz4iYEed5yfWiZpVqyw7PzC4n/sHMl/dW7fAdIVEUlGYqSscaf6RnPatgpboSoG5kRS6mvQgHtcCzE6iF+GKiAcvuZnzBrk0RWUO3D6HI8099f1JiWudlVHhZVzjATCXYkdm/LL6TmqMZ5Dmr0iL6QeBMgE79wZjuy55kWH7IZlk7S1IBk5Xr8PaXY=
+  on:
+    # tags: true
+    branch: master

@@ -1,0 +1,12 @@
+language: python
+python: 3.6
+env:
+- TOXENV=py36
+install: pip install tox-travis
+script: tox -e ${TOXENV}
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: magizbox
+  password:
+    secure: dXEpbSkN17HUIDIHnxqPdt3EevQGRUP5eyNy7sy6wSAsb5GV88buLWMSyjzCQpHBpmqcgXxIMKfo7odQjPSFwUr0/ZkY6vTm3/jZvztesyzepQSJcXSFiDEoyqlTEwyZcSbyATwdDOksjeYwUfCRYja3uzQRcDxHQ8Pr+acw28gFbZNfgnNFEIMZiqrzB1dfDFPUIVpj1cfh6Z8n2d51aRsqCLxqSVE6z3dn4P5+vrR160m01HBjuAlOQD82x/xh6zONUZNL+D39eFDB6jKmVwHnNp+UYOZNUE1ZfH4T4XtAdwDjHcLPLv4zLY0KszQnbzeKZ85EQhIW41nfyhqpfba3BgAxAo8EGFU80e1LYblPKhy3AVB3FJDX/hdKpwTJDPX34BT4Ve7B1FaLbH+jdvW1d5bRy7GTSFmbWNyqPIrzGCpuf7i20jrW++xTuIWS7lJPq45BZdz7msQqXDeQ/yW5Me+1xUQ8hC+7J2lm2BAGniNV9+M/Wcdd342rSwOAAWU9RdbADhRpT71Qfbc+i2wbJ5RGAOCtXUD7UeW8/ojHn9lBgKGkhLy26XQ16ieEtOH0ccN0TjVIjQVZmpi5B0tEWj6E5d0BjDNyTf2zZT1hD9YkOKR6p4L8VVm0Wb7C7+2DOBGj0J5vkn5uCLFHh3Efb6GEz70d/i29rtkRKso=

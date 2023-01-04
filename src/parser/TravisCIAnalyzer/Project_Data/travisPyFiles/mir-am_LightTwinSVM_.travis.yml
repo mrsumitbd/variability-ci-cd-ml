@@ -1,0 +1,51 @@
+# LightTwinSVM Program - Simple and Fast
+# Developer: Mir, A. (mir-am@hotmail.com)
+# License: GNU General Public License v3.0
+
+# Configuration file for building and testing LightTwinSVM on Travis CI
+language: python
+
+# Ubuntu 16.04 LTS & OS X
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      sudo: true
+      python: '3.5'
+      
+    - os: linux
+      dist: xenial
+      sudo: true
+      python: '3.6'
+      
+    - os: linux
+      dist: xenial
+      sudo: true
+      python: '3.7'
+      
+    - os: osx
+      language: generic
+      env: PYENV_VERSION=3.7.2
+
+branches:
+  only:
+  - master
+  - dev
+
+addons:
+  apt:
+    packages:
+    - liblapack-dev
+    - libblas-dev
+    - python3-dev
+    - python3-tk
+
+before_install:
+  - chmod +x install-travisci.sh
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then echo $'#!/bin/bash\npython3 -m unittest discover -s tests' > ltsvm_test.sh; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then chmod +x ltsvm_test.sh; fi
+  
+install: ./install-travisci.sh
+
+script:
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./ltsvm_test.sh; fi

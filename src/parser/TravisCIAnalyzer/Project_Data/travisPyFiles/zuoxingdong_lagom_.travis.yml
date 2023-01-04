@@ -1,0 +1,46 @@
+# https://travis-ci.org/zuoxingdong/lagom
+sudo: true
+
+language: python
+# Set Python version
+python:
+    - '3.7'
+dist: xenial
+
+bundler_args: --retry 10  # avoid time out
+
+# Install dependencies
+install:
+    - cd scripts
+    - sudo systemctl enable mysql  # this line and next fixes mysql error in TravisCI (tmp)
+    - sudo service mysql start
+    - bash 1_setup_system.sh
+    - bash 2_install_miniconda.sh
+    - . $HOME/miniconda3/etc/profile.d/conda.sh
+    - conda activate lagom
+    - bash 3_setup_envs.sh
+    - cd ..
+    - pip install -q mock
+    - conda install -q -y pytorch torchvision cpuonly -c pytorch
+    # Install current project
+    - pip install -e .
+script:
+    # Activate conda environment
+    - . $HOME/miniconda3/etc/profile.d/conda.sh
+    - conda activate lagom
+    # Run test files
+    - pytest test/ -v
+    # flake8 check for code style and quality
+    - flake8 lagom/
+    # make docs
+    - cd docs
+    - make html
+    
+# Only master branch
+branches:
+    only:
+        - master
+
+# Turn off email notification
+notifications:
+    email: false

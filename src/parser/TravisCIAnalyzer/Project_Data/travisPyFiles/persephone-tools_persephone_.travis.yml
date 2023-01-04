@@ -1,0 +1,23 @@
+language: python
+sudo: required
+dist: xenial
+python:
+  - "3.6"
+  - "3.7"
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update && sudo apt-get install ffmpeg; fi
+install:
+  - pip install .
+  - pip install pytest-cov==2.6.0
+  - pip install python-coveralls
+  - pip install -r test_requirements.txt
+script:
+  - pylint -E persephone
+  - mypy persephone
+  - pytest --cov=persephone
+notifications:
+  email:
+    recipients:
+      - oliver.adams@gmail.com
+after_success:
+  - coveralls

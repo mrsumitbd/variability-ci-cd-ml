@@ -1,0 +1,34 @@
+language: python
+env:
+    - PYTHON=3.5
+    - PYTHON=3.6
+    - PYTHON=3.7
+
+before_install:
+  - wget -q http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+  - chmod +x miniconda.sh
+  - ./miniconda.sh -b -p /home/travis/miniconda
+  - export PATH=/home/travis/miniconda/bin:$PATH
+  - conda update --yes conda
+
+install:
+    - conda create -n testenv --yes pip python=$PYTHON
+    - source activate testenv
+    - conda install --yes --file requirements.txt
+    - pip install --upgrade twine
+    - pip install matplotlib==3.0
+    - python setup.py develop
+    - python setup.py sdist bdist_wheel
+
+script:
+    - # Checks whether your distribution’s long description will render correctly on PyPI.
+    - twine check dist/*
+    - # Run tests, show verbose output and print the top 10 slowest running tests
+    - py.test --cov=pyglmnet tests/ --verbose --durations=10
+    - # Run doctests
+    - py.test pyglmnet/pyglmnet.py --verbose --doctest-modules 
+    - # Run flake8 to check that package and tests adhere to PEP8
+    - make flake
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)

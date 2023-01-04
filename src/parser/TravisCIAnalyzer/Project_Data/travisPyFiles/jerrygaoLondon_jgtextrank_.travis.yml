@@ -1,0 +1,35 @@
+language: python
+cache: pip
+sudo: required
+dist: trusty
+
+python:
+  - "3.6"
+  - "3.6-dev"  # 3.6 development branch
+  - nightly
+
+matrix:
+  allow_failures:
+    - python: nightly
+
+before_install:
+  - python -m pip install --upgrade pip
+  - pip install --upgrade pip setuptools wheel
+  - sudo apt-get build-dep python-scipy
+  - sudo apt-get install -qq python-scipy
+  - pip install .
+  - pip install -r requirements.txt
+  - pip install scipy
+  - pip install matplotlib
+  - python -c "exec(\"import nltk\nnltk.download('stopwords')\")"
+# command to install dependencies
+install:
+  - python setup.py -q install
+# command to run tests
+script:
+  - py.test
+
+notifications:
+    on_success: change
+    on_failure: change  # `always` will be the setting once code changes slow down
+

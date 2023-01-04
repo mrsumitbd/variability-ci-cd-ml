@@ -1,0 +1,17 @@
+sudo: true
+language: python
+dist: xenial
+env:
+  EXCELCY_TEMP_PATH=${TRAVIS_BUILD_DIR}
+python:
+  - 3.6
+  - 3.7
+  - 3.8
+before_install:
+  - sudo apt-get install -y libxml2-dev libxslt1-dev antiword unrtf poppler-utils pstotext tesseract-ocr flac ffmpeg lame libmad0 libsox-fmt-mp3 sox libjpeg-dev swig libpulse-dev
+install:
+ - pip install -r requirements-test.txt
+script:
+ - tox
+after_success:
+ - coveralls
