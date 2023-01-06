@@ -33,7 +33,7 @@ class ProcessGitHub(object):
     def read_file_contents(self, repo_name, file_path):
         repo = self.github_user.get_repo(repo_name)
         file_contents = repo.get_contents(file_path)
-        print(file_contents.decoded_content.decode())
+        # print(file_contents.decoded_content.decode())
         return file_contents.decoded_content.decode()
 
     def __del__(self):
