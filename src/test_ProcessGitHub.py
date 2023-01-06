@@ -6,8 +6,8 @@ import unittest
 class TestProcessGitHub(unittest.TestCase):
 
     maxDiff = None
-
-    def setUp(self):
+    @classmethod
+    def setUpC(self):
         self.process_gh = ProcessGitHub("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")
 
     def tearDown(self):

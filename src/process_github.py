@@ -1,5 +1,6 @@
 from github import Github
 
+
 class ProcessGitHub(object):
     def __init__(self, token):
         self.g = Github(token)
@@ -20,7 +21,10 @@ class ProcessGitHub(object):
         repo = self.github_user.get_repo(repo_name)
         repo.delete()
 
-    def list_contents(self, repo_name, folder_name = None):
+    def list_contents(self, repo_name, folder_name=None):
+        # this function does not list contents of a repo recursively
+        # todo: add the feature to recursively list contents of a repo
+
         repo = self.github_user.get_repo(repo_name)
         if folder_name is None:
             contents = repo.get_contents("")
@@ -37,4 +41,4 @@ class ProcessGitHub(object):
         return file_contents.decoded_content.decode()
 
     def __del__(self):
-        print("Freeing memory... Done!")
+        print("Deleting object... Done!")
