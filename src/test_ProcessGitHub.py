@@ -4,8 +4,8 @@ import unittest
 
 
 class TestProcessGitHub(unittest.TestCase):
-
     maxDiff = None
+
     def setUp(self):
         self.process_gh = ProcessGitHub("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")
 
@@ -13,11 +13,11 @@ class TestProcessGitHub(unittest.TestCase):
         del self.process_gh
 
     def test_list_contents(self):
-        self.assertEqual(self.process_gh.list_contents("docker-example"), ['Dockerfile', 'Jenkinsfile', 'README.md', 'app', 'requirements.txt'])
+        self.assertEqual(self.process_gh.list_contents("docker-example"),
+                         ['Dockerfile', 'Jenkinsfile', 'README.md', 'app', 'requirements.txt'])
         self.assertEqual(self.process_gh.list_contents('docker-example', 'app'), ['main.py'])
 
     def test_read_file_contents(self):
-
         test_contents = """dist: xenial
 os: linux
 language: python
@@ -57,4 +57,3 @@ after_success: codecov
 
 if __name__ == '__main__':
     unittest.main()
-

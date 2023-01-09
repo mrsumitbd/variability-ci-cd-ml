@@ -1,0 +1,31 @@
+digraph tree {
+    ".travis.yml";
+    "language";
+    "python";
+    "all_branches";
+    "True";
+    "python";
+    "3.5";
+    "3.6";
+    "3.7";
+    "3.8";
+    "3.8-dev";
+    "install";
+    "pip install -r requirements.txt";
+    "script";
+    "python -m unittest discover;";
+    ".travis.yml" -> "language";
+    ".travis.yml" -> "all_branches";
+    ".travis.yml" -> "python";
+    ".travis.yml" -> "install";
+    ".travis.yml" -> "script";
+    "language" -> "python";
+    "all_branches" -> "True";
+    "python" -> "3.5";
+    "python" -> "3.6";
+    "python" -> "3.7";
+    "python" -> "3.8";
+    "python" -> "3.8-dev";
+    "install" -> "pip install -r requirements.txt";
+    "script" -> "python -m unittest discover;";
+}
