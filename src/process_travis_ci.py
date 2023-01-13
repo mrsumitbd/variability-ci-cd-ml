@@ -1,5 +1,6 @@
 from PyTravisCI import TravisCI, defaults
 
+
 class ProcessTravisCIBuilds:
     def __init__(self, token):
         self.travis = TravisCI(access_token=token, access_point=defaults.access_points.PRIVATE)
