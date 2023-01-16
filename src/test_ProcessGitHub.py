@@ -54,6 +54,9 @@ after_success: codecov
 
         self.assertEqual(self.process_gh.read_file_contents("prince", ".travis.yml"), test_contents)
 
+    def test_list_branches(self):
+        self.assertEqual(self.process_gh.list_branches("ahmad-abdellatif/3D-convolutional-speaker-recognition"), ['master'])
+
 
 if __name__ == '__main__':
     unittest.main()

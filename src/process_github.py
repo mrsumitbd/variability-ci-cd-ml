@@ -21,7 +21,7 @@ class ProcessGitHub(object):
         repo = self.github_user.get_repo(repo_name)
         repo.delete()
 
-    def list_contents(self, repo_name, folder_name=None):
+    def list_contents(self, repo_name, folder_name=None):  # test passing
         # this function does not list contents of a repo recursively
         # todo: add the feature to recursively list contents of a repo
 
@@ -34,11 +34,15 @@ class ProcessGitHub(object):
 
         return sorted([content.name for content in contents])
 
-    def read_file_contents(self, repo_name, file_path):
+    def read_file_contents(self, repo_name, file_path):  # test passing
         repo = self.github_user.get_repo(repo_name)
         file_contents = repo.get_contents(file_path)
         # print(file_contents.decoded_content.decode())
         return file_contents.decoded_content.decode()
+
+    def list_branches(self, repo_name):
+        repo = self.g.get_repo(repo_name)
+        return [branch.name for branch in list(repo.get_branches())]
 
     def __del__(self):
         print("Deleting object... Done!")
