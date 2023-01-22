@@ -40,7 +40,7 @@ class ProcessGitHub(object):
         # print(file_contents.decoded_content.decode())
         return file_contents.decoded_content.decode()
 
-    def list_branches(self, repo_name):
+    def list_branches(self, repo_name):  # test passing
         repo = self.g.get_repo(repo_name)
         return [branch.name for branch in list(repo.get_branches())]
 
