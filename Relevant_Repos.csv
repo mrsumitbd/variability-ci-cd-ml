@@ -1,207 +1,29 @@
 RepoName,BuildStatus,TotalJobsRun,TotalPassedJobs
-ahmad-abdellatif/3D-convolutional-speaker-recognition,errored,3.0,0.0
-ahmad-abdellatif/abbreviation-extraction,passed,1.0,1.0
-ahmad-abdellatif/adam_qas,errored,2.0,0.0
-ahmad-abdellatif/ADNC,errored,1.0,0.0
-ahmad-abdellatif/agent,errored,2.0,0.0
-ahmad-abdellatif/AlphaPy,passed,2.0,2.0
-ahmad-abdellatif/anonymisation,failed,1.0,0.0
-ahmad-abdellatif/ATM,failed,3.0,1.0
-ahmad-abdellatif/autosubsync,errored,4.0,0.0
-ahmad-abdellatif/axelrod-dojo,errored,2.0,0.0
-ahmad-abdellatif/babyai,errored,1.0,0.0
-ahmad-abdellatif/bad-commit-message-blocker,passed,1.0,1.0
-ahmad-abdellatif/bert-embedding,partially passed,3.0,2.0
-ahmad-abdellatif/bert_score,errored,2.0,0.0
-ahmad-abdellatif/bigartm,partially passed,4.0,3.0
-ahmad-abdellatif/bristol,failed,2.0,0.0
-ahmad-abdellatif/calour,errored,3.0,0.0
-ahmad-abdellatif/chainer-cyclegan,passed,1.0,1.0
-ahmad-abdellatif/chainer-dense-fusion,errored,2.0,0.0
-ahmad-abdellatif/chariot,errored,1.0,0.0
-ahmad-abdellatif/chemml,errored,2.0,0.0
-ahmad-abdellatif/choix,passed,2.0,2.0
-ahmad-abdellatif/crypto-predict,failed,1.0,0.0
-ahmad-abdellatif/cs-ranking,failed,3.0,1.0
-ahmad-abdellatif/datmo,errored,4.0,0.0
-ahmad-abdellatif/decentralized-ml,errored,2.0,0.0
-ahmad-abdellatif/DeepCTR,errored,1.0,0.0
-ahmad-abdellatif/DeepMoji,passed,1.0,1.0
-ahmad-abdellatif/deeptennis,partially passed,3.0,2.0
-ahmad-abdellatif/deepvoice3_pytorch,errored,2.0,0.0
-ahmad-abdellatif/delfi,partially passed,4.0,3.0
-ahmad-abdellatif/DenseTorch,failed,2.0,0.0
-ahmad-abdellatif/dictlearn,,2.0,0.0
-ahmad-abdellatif/django-recommends,errored,4.0,0.0
-ahmad-abdellatif/doc2vec,failed,2.0,0.0
-ahmad-abdellatif/dropblock,errored,2.0,0.0
-ahmad-abdellatif/efficientnet,errored,1.0,1.0
-ahmad-abdellatif/elephas,passed,2.0,0.0
-ahmad-abdellatif/Engine,errored,5.0,0.0
-ahmad-abdellatif/entropy,failed,4.0,0.0
-ahmad-abdellatif/EvalAI,errored,1.0,0.0
-ahmad-abdellatif/Face-Recognition-System,errored,9.0,0.0
-ahmad-abdellatif/Feature-Selection,errored,1.0,0.0
-ahmad-abdellatif/fer,,1.0,0.0
-ahmad-abdellatif/fishervector,errored,3.0,0.0
-ahmad-abdellatif/flashtext,failed,1.0,1.0
-ahmad-abdellatif/foremast-brain,errored,2.0,0.0
-ahmad-abdellatif/Friday,passed,1.0,0.0
-ahmad-abdellatif/funk-svd,errored,2.0,0.0
-ahmad-abdellatif/gandissect,errored,2.0,2.0
-ahmad-abdellatif/GCNet,errored,1.0,0.0
-ahmad-abdellatif/gecco,passed,3.0,1.0
-ahmad-abdellatif/gluon2pytorch,failed,4.0,0.0
-ahmad-abdellatif/GOApy,failed,2.0,0.0
-ahmad-abdellatif/GPflow-Slim,errored,1.0,0.0
-ahmad-abdellatif/gqcnn,errored,1.0,1.0
-ahmad-abdellatif/graynet,errored,3.0,2.0
-ahmad-abdellatif/healthcareai-py,passed,2.0,0.0
-ahmad-abdellatif/holoclean,partially passed,4.0,3.0
-ahmad-abdellatif/hub-toolbox-python3,errored,2.0,0.0
-ahmad-abdellatif/hyperdock,partially passed,,
-ahmad-abdellatif/hyperparameter_hunter,failed,2.0,0.0
-ahmad-abdellatif/hypers,,4.0,0.0
-ahmad-abdellatif/imgaug,errored,2.0,0.0
-ahmad-abdellatif/IOHMM,failed,2.0,0.0
-ahmad-abdellatif/ivis,errored,1.0,1.0
-ahmad-abdellatif/keras-eval,errored,2.0,0.0
-ahmad-abdellatif/keras-metrics,passed,5.0,0.0
-ahmad-abdellatif/kernel-gof,errored,4.0,0.0
-ahmad-abdellatif/knead,failed,1.0,0.0
-ahmad-abdellatif/koolsla,errored,9.0,0.0
-ahmad-abdellatif/lagom,errored,,
-ahmad-abdellatif/language-detector,errored,1.0,0.0
-ahmad-abdellatif/language-modeling,,1.0,0.0
-ahmad-abdellatif/light-weight-refinenet,errored,1.0,1.0
-ahmad-abdellatif/lightfm,failed,1.0,1.0
-ahmad-abdellatif/LocalGraphClustering,passed,3.0,2.0
-ahmad-abdellatif/magnet,passed,7.0,0.0
-ahmad-abdellatif/magnitude,partially passed,1.0,1.0
-ahmad-abdellatif/MatchZoo,errored,2.0,1.0
-ahmad-abdellatif/MAX-Audio-Classifier,passed,2.0,0.0
-ahmad-abdellatif/MAX-Audio-Embedding-Generator,failed,3.0,0.0
-ahmad-abdellatif/MAX-Audio-Sample-Generator,failed,2.0,2.0
-ahmad-abdellatif/MAX-Breast-Cancer-Mitosis-Detector,errored,3.0,2.0
-ahmad-abdellatif/MAX-Fast-Neural-Style-Transfer,passed,1.0,0.0
-ahmad-abdellatif/MAX-Image-Caption-Generator,partially passed,4.0,3.0
-ahmad-abdellatif/MAX-Image-Resolution-Enhancer,failed,1.0,0.0
-ahmad-abdellatif/MAX-Image-Segmenter,partially passed,1.0,1.0
-ahmad-abdellatif/MAX-Inception-ResNet-v2,errored,5.0,5.0
-ahmad-abdellatif/MAX-News-Text-Generator,passed,3.0,2.0
-ahmad-abdellatif/MAX-Object-Detector,passed,1.0,0.0
-ahmad-abdellatif/MAX-ResNet-50,partially passed,3.0,0.0
-ahmad-abdellatif/MAX-Review-Text-Generator,errored,1.0,0.0
-ahmad-abdellatif/MAX-Scene-Classifier,failed,1.0,0.0
-ahmad-abdellatif/MAX-Speech-to-Text-Converter,errored,3.0,0.0
-ahmad-abdellatif/MAX-Sports-Video-Classifier,errored,1.0,0.0
-ahmad-abdellatif/MAX-Text-Sentiment-Classifier,failed,2.0,2.0
-ahmad-abdellatif/MAX-Weather-Forecaster,errored,1.0,1.0
-ahmad-abdellatif/medaCy,passed,1.0,0.0
-ahmad-abdellatif/medpy,passed,4.0,1.0
-ahmad-abdellatif/minutes,failed,2.0,1.0
-ahmad-abdellatif/mirapy,errored,2.0,0.0
-ahmad-abdellatif/MLaaS4HEP,errored,2.0,1.0
-ahmad-abdellatif/ml_drought,errored,2.0,0.0
-ahmad-abdellatif/mmit,failed,2.0,0.0
-ahmad-abdellatif/mmtf-pyspark,failed,11.0,3.0
-ahmad-abdellatif/mocr,errored,5.0,4.0
-ahmad-abdellatif/moe-serifu-agent,partially passed,4.0,0.0
-ahmad-abdellatif/moses,partially passed,3.0,0.0
-ahmad-abdellatif/mouse_connectivity_models,errored,1.0,0.0
-ahmad-abdellatif/mt-dnn,errored,3.0,0.0
-ahmad-abdellatif/multi_rake,failed,4.0,3.0
-ahmad-abdellatif/MusicScoreClassifier,errored,1.0,1.0
-ahmad-abdellatif/NegBio,partially passed,2.0,0.0
-ahmad-abdellatif/netharn,passed,4.0,3.0
-ahmad-abdellatif/neural-pipeline,failed,1.0,1.0
-ahmad-abdellatif/neuralcoref,partially passed,8.0,8.0
-ahmad-abdellatif/Next-Basket-Recommendation,passed,1.0,0.0
-ahmad-abdellatif/nlpaug,passed,1.0,1.0
-ahmad-abdellatif/nlppln,errored,,
-ahmad-abdellatif/octconv,passed,2.0,0.0
-ahmad-abdellatif/onnx-chainer,,1.0,0.0
-ahmad-abdellatif/openl3,failed,,
-ahmad-abdellatif/osprey,errored,,
-ahmad-abdellatif/pathway-forte,,1.0,0.0
-ahmad-abdellatif/persephone,,1.0,0.0
-ahmad-abdellatif/pescador,failed,1.0,0.0
-ahmad-abdellatif/pfla,errored,1.0,0.0
-ahmad-abdellatif/pic2vec,errored,1.0,0.0
-ahmad-abdellatif/PICCL,failed,1.0,0.0
-ahmad-abdellatif/PILCO,errored,1.0,1.0
-ahmad-abdellatif/plasma-python,errored,7.0,0.0
-ahmad-abdellatif/practNLPTools-lite,passed,1.0,0.0
-ahmad-abdellatif/proxTV,failed,1.0,0.0
-ahmad-abdellatif/pyalcs,errored,4.0,2.0
-ahmad-abdellatif/pybda,errored,1.0,0.0
-ahmad-abdellatif/pycoQC,partially passed,1.0,0.0
-ahmad-abdellatif/pycroscopy,errored,1.0,0.0
-ahmad-abdellatif/pyeunjeon,errored,1.0,1.0
-ahmad-abdellatif/pyglmnet,errored,1.0,0.0
-ahmad-abdellatif/pyGPGO,passed,1.0,0.0
-ahmad-abdellatif/PyKOMORAN,errored,1.0,1.0
-ahmad-abdellatif/pylj,failed,2.0,0.0
-ahmad-abdellatif/pymc-learn,passed,4.0,0.0
-ahmad-abdellatif/pymfe,failed,1.0,0.0
-ahmad-abdellatif/pymlask,errored,,
-ahmad-abdellatif/pymuscle,errored,2.0,2.0
-ahmad-abdellatif/pyrrha-pynode,,1.0,0.0
-ahmad-abdellatif/python-bpe,passed,3.0,2.0
-ahmad-abdellatif/pytorch-wrapper,failed,1.0,0.0
-ahmad-abdellatif/pytreebank,partially passed,3.0,0.0
-ahmad-abdellatif/pyuplift,errored,1.0,1.0
-ahmad-abdellatif/pywsd,errored,1.0,0.0
-ahmad-abdellatif/QuCumber,passed,1.0,0.0
-ahmad-abdellatif/recoder,errored,1.0,0.0
-ahmad-abdellatif/regain,errored,1.0,1.0
-ahmad-abdellatif/robosat,errored,1.0,0.0
-ahmad-abdellatif/robot-surgery-segmentation,passed,1.0,0.0
-ahmad-abdellatif/rrcf,failed,1.0,0.0
-ahmad-abdellatif/sacremoses,errored,3.0,0.0
-ahmad-abdellatif/salad,failed,2.0,2.0
-ahmad-abdellatif/scattertext,errored,1.0,0.0
-ahmad-abdellatif/schnetpack,passed,1.0,0.0
-ahmad-abdellatif/scikit-garden,failed,4.0,0.0
-ahmad-abdellatif/scikit-multilearn,errored,2.0,1.0
-ahmad-abdellatif/scikit-optimize,errored,5.0,0.0
-ahmad-abdellatif/scitime,failed,3.0,0.0
-ahmad-abdellatif/seglearn,errored,2.0,0.0
-ahmad-abdellatif/seq2annotation,errored,6.0,0.0
-ahmad-abdellatif/serenata-de-amor,failed,2.0,0.0
-ahmad-abdellatif/setka,failed,6.0,6.0
-ahmad-abdellatif/shadho,errored,1.0,0.0
-ahmad-abdellatif/shapenet,passed,5.0,0.0
-ahmad-abdellatif/sherpa,failed,2.0,0.0
-ahmad-abdellatif/sigpy,errored,1.0,0.0
-ahmad-abdellatif/simple-image-classifier,errored,,
-ahmad-abdellatif/skggm,errored,4.0,0.0
-ahmad-abdellatif/sklearn-porter,,,
-ahmad-abdellatif/snips-nlu-metrics,errored,1.0,0.0
-ahmad-abdellatif/spacy-sentiws,,1.0,0.0
-ahmad-abdellatif/spacy_readability,failed,,
-ahmad-abdellatif/spampy,errored,3.0,1.0
-ahmad-abdellatif/sparse-structured-attention,,4.0,3.0
-ahmad-abdellatif/spotlight,errored,3.0,0.0
-ahmad-abdellatif/starboost,partially passed,3.0,0.0
-ahmad-abdellatif/stheno,failed,1.0,1.0
-ahmad-abdellatif/strava-wind-analysis-ml,errored,6.0,0.0
-ahmad-abdellatif/synthtorch,passed,6.0,0.0
-ahmad-abdellatif/syntok,errored,4.0,0.0
-ahmad-abdellatif/tangent,errored,6.0,5.0
-ahmad-abdellatif/tensorflow-rnn-ctc,errored,2.0,0.0
-ahmad-abdellatif/textpipe,partially passed,1.0,1.0
-ahmad-abdellatif/tfdiffeq,errored,3.0,0.0
-ahmad-abdellatif/timefhuman,passed,3.0,2.0
-ahmad-abdellatif/tindetheus,errored,4.0,3.0
-ahmad-abdellatif/torchgpipe,partially passed,3.0,0.0
-ahmad-abdellatif/transformer-lm,partially passed,1.0,1.0
-ahmad-abdellatif/uwreact_robot,errored,,
-ahmad-abdellatif/vecto,passed,1.0,1.0
-ahmad-abdellatif/Voice-based-gender-recognition,,2.0,1.0
-ahmad-abdellatif/w2n,passed,1.0,0.0
-ahmad-abdellatif/whatthelang,errored,2.0,0.0
-ahmad-abdellatif/wiki-dump-reader,errored,1.0,1.0
-ahmad-abdellatif/wukong-robot,failed,5.0,5.0
-ahmad-abdellatif/wwdata,passed,2.0,0.0
-ahmad-abdellatif/ZOOpt,passed,1.0,1.0
+ahmad-abdellatif/3D-convolutional-speaker-recognition,errored,3,0
+ahmad-abdellatif/abbreviation-extraction,passed,1,1
+ahmad-abdellatif/adam_qas,errored,2,0
+ahmad-abdellatif/ADNC,errored,1,0
+ahmad-abdellatif/agent,errored,2,0
+ahmad-abdellatif/AlphaPy,passed,2,2
+ahmad-abdellatif/anonymisation,failed,1,0
+ahmad-abdellatif/ATM,failed,3,1
+ahmad-abdellatif/autosubsync,errored,4,0
+ahmad-abdellatif/axelrod-dojo,errored,2,0
+ahmad-abdellatif/babyai,errored,1,0
+ahmad-abdellatif/bad-commit-message-blocker,passed,1,1
+ahmad-abdellatif/bert-embedding,partially passed,3,2
+ahmad-abdellatif/bert_score,errored,2,0
+ahmad-abdellatif/bigartm,partially passed,4,3
+ahmad-abdellatif/bristol,failed,2,0
+ahmad-abdellatif/calour,errored,2,0
+ahmad-abdellatif/chainer-cyclegan,failed,4,0
+ahmad-abdellatif/chainer-dense-fusion,errored,2,0
+ahmad-abdellatif/chariot,errored,2,0
+ahmad-abdellatif/chemml,passed,1,1
+ahmad-abdellatif/choix,errored,2,0
+ahmad-abdellatif/crypto-predict,failed,5,0
+ahmad-abdellatif/cs-ranking,errored,4,0
+ahmad-abdellatif/datmo,errored,1,0
+ahmad-abdellatif/decentralized-ml,errored,9,0
+ahmad-abdellatif/DeepCTR,errored,1,0
+ahmad-abdellatif/DeepMoji,failed,1,0
