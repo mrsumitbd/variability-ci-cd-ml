@@ -29,3 +29,179 @@ ahmad-abdellatif/DeepCTR,errored,9.0,0.0
 ahmad-abdellatif/DeepMoji,,,
 ahmad-abdellatif/deeptennis,errored,1.0,0.0
 ahmad-abdellatif/deepvoice3_pytorch,failed,1.0,0.0
+ahmad-abdellatif/delfi,passed,1.0,1.0
+ahmad-abdellatif/DenseTorch,passed,1.0,1.0
+ahmad-abdellatif/dictlearn,partially passed,3.0,2.0
+ahmad-abdellatif/django-recommends,errored,7.0,0.0
+ahmad-abdellatif/doc2vec,passed,1.0,1.0
+ahmad-abdellatif/dropblock,failed,2.0,1.0
+ahmad-abdellatif/efficientnet,failed,2.0,0.0
+ahmad-abdellatif/elephas,errored,3.0,0.0
+ahmad-abdellatif/Engine,passed,2.0,2.0
+ahmad-abdellatif/entropy,partially passed,3.0,2.0
+ahmad-abdellatif/EvalAI,failed,1.0,0.0
+ahmad-abdellatif/Face-Recognition-System,partially passed,4.0,3.0
+ahmad-abdellatif/Feature-Selection,errored,1.0,0.0
+ahmad-abdellatif/fer,passed,1.0,1.0
+ahmad-abdellatif/fishervector,passed,5.0,5.0
+ahmad-abdellatif/flashtext,partially passed,3.0,2.0
+ahmad-abdellatif/foremast-brain,errored,1.0,0.0
+ahmad-abdellatif/Friday,failed,3.0,0.0
+ahmad-abdellatif/funk-svd,errored,1.0,0.0
+ahmad-abdellatif/gandissect,errored,1.0,0.0
+ahmad-abdellatif/GCNet,failed,3.0,0.0
+ahmad-abdellatif/gecco,errored,1.0,0.0
+ahmad-abdellatif/gluon2pytorch,passed,2.0,2.0
+ahmad-abdellatif/GOApy,passed,1.0,1.0
+ahmad-abdellatif/GPflow-Slim,failed,1.0,0.0
+ahmad-abdellatif/gqcnn,errored,4.0,1.0
+ahmad-abdellatif/graynet,errored,2.0,1.0
+ahmad-abdellatif/healthcareai-py,errored,2.0,0.0
+ahmad-abdellatif/holoclean,failed,2.0,1.0
+ahmad-abdellatif/hub-toolbox-python3,failed,2.0,0.0
+ahmad-abdellatif/hyperdock,errored,2.0,0.0
+ahmad-abdellatif/hyperparameter_hunter,partially passed,11.0,3.0
+ahmad-abdellatif/hypers,partially passed,5.0,4.0
+ahmad-abdellatif/imgaug,errored,4.0,0.0
+ahmad-abdellatif/IOHMM,errored,3.0,0.0
+ahmad-abdellatif/ivis,failed,1.0,0.0
+ahmad-abdellatif/keras-eval,errored,3.0,0.0
+ahmad-abdellatif/keras-metrics,partially passed,4.0,3.0
+ahmad-abdellatif/kernel-gof,passed,1.0,1.0
+ahmad-abdellatif/knead,failed,2.0,0.0
+ahmad-abdellatif/koolsla,partially passed,4.0,3.0
+ahmad-abdellatif/lagom,passed,1.0,1.0
+ahmad-abdellatif/language-detector,passed,8.0,8.0
+ahmad-abdellatif/language-modeling,errored,1.0,0.0
+ahmad-abdellatif/light-weight-refinenet,passed,1.0,1.0
+ahmad-abdellatif/lightfm,,,
+ahmad-abdellatif/LocalGraphClustering,failed,2.0,0.0
+ahmad-abdellatif/magnet,errored,1.0,0.0
+ahmad-abdellatif/magnitude,,,
+ahmad-abdellatif/MatchZoo,,,
+ahmad-abdellatif/MAX-Audio-Classifier,failed,1.0,0.0
+ahmad-abdellatif/MAX-Audio-Embedding-Generator,errored,1.0,0.0
+ahmad-abdellatif/MAX-Audio-Sample-Generator,errored,1.0,0.0
+ahmad-abdellatif/MAX-Breast-Cancer-Mitosis-Detector,failed,1.0,0.0
+ahmad-abdellatif/MAX-Fast-Neural-Style-Transfer,errored,1.0,0.0
+ahmad-abdellatif/MAX-Image-Caption-Generator,errored,1.0,0.0
+ahmad-abdellatif/MAX-Image-Resolution-Enhancer,passed,1.0,1.0
+ahmad-abdellatif/MAX-Image-Segmenter,failed,7.0,0.0
+ahmad-abdellatif/MAX-Inception-ResNet-v2,errored,1.0,0.0
+ahmad-abdellatif/MAX-News-Text-Generator,errored,1.0,0.0
+ahmad-abdellatif/MAX-Object-Detector,partially passed,4.0,2.0
+ahmad-abdellatif/MAX-ResNet-50,errored,1.0,0.0
+ahmad-abdellatif/MAX-Review-Text-Generator,errored,1.0,0.0
+ahmad-abdellatif/MAX-Scene-Classifier,errored,1.0,0.0
+ahmad-abdellatif/MAX-Speech-to-Text-Converter,passed,1.0,1.0
+ahmad-abdellatif/MAX-Sports-Video-Classifier,errored,1.0,0.0
+ahmad-abdellatif/MAX-Text-Sentiment-Classifier,failed,1.0,0.0
+ahmad-abdellatif/MAX-Weather-Forecaster,passed,1.0,1.0
+ahmad-abdellatif/medaCy,failed,2.0,0.0
+ahmad-abdellatif/medpy,errored,4.0,0.0
+ahmad-abdellatif/minutes,errored,1.0,0.0
+ahmad-abdellatif/mirapy,,,
+ahmad-abdellatif/MLaaS4HEP,passed,2.0,2.0
+ahmad-abdellatif/ml_drought,failed,1.0,0.0
+ahmad-abdellatif/mmit,partially passed,3.0,2.0
+ahmad-abdellatif/mmtf-pyspark,errored,1.0,0.0
+ahmad-abdellatif/mocr,errored,3.0,0.0
+ahmad-abdellatif/moe-serifu-agent,passed,1.0,1.0
+ahmad-abdellatif/moses,errored,1.0,0.0
+ahmad-abdellatif/mouse_connectivity_models,errored,1.0,0.0
+ahmad-abdellatif/mt-dnn,errored,1.0,0.0
+ahmad-abdellatif/multi_rake,passed,1.0,1.0
+ahmad-abdellatif/MusicScoreClassifier,failed,1.0,0.0
+ahmad-abdellatif/NegBio,errored,1.0,0.0
+ahmad-abdellatif/netharn,failed,1.0,0.0
+ahmad-abdellatif/neural-pipeline,errored,3.0,0.0
+ahmad-abdellatif/neuralcoref,passed,2.0,2.0
+ahmad-abdellatif/Next-Basket-Recommendation,failed,1.0,0.0
+ahmad-abdellatif/nlpaug,errored,1.0,0.0
+ahmad-abdellatif/nlppln,errored,4.0,0.0
+ahmad-abdellatif/octconv,failed,2.0,1.0
+ahmad-abdellatif/onnx-chainer,errored,5.0,0.0
+ahmad-abdellatif/openl3,errored,3.0,0.0
+ahmad-abdellatif/osprey,failed,2.0,0.0
+ahmad-abdellatif/pathway-forte,failed,6.0,0.0
+ahmad-abdellatif/persephone,errored,2.0,0.0
+ahmad-abdellatif/pescador,passed,6.0,6.0
+ahmad-abdellatif/pfla,failed,1.0,0.0
+ahmad-abdellatif/pic2vec,errored,5.0,0.0
+ahmad-abdellatif/PICCL,errored,2.0,0.0
+ahmad-abdellatif/PILCO,errored,1.0,0.0
+ahmad-abdellatif/plasma-python,,,
+ahmad-abdellatif/practNLPTools-lite,errored,4.0,0.0
+ahmad-abdellatif/proxTV,,,
+ahmad-abdellatif/pyalcs,failed,1.0,0.0
+ahmad-abdellatif/pybda,errored,1.0,0.0
+ahmad-abdellatif/pycoQC,,,
+ahmad-abdellatif/pycroscopy,errored,3.0,1.0
+ahmad-abdellatif/pyeunjeon,partially passed,4.0,3.0
+ahmad-abdellatif/pyglmnet,failed,3.0,0.0
+ahmad-abdellatif/pyGPGO,errored,3.0,0.0
+ahmad-abdellatif/PyKOMORAN,passed,1.0,1.0
+ahmad-abdellatif/pylj,errored,6.0,0.0
+ahmad-abdellatif/pymc-learn,errored,6.0,0.0
+ahmad-abdellatif/pymfe,errored,4.0,0.0
+ahmad-abdellatif/pymlask,partially passed,6.0,5.0
+ahmad-abdellatif/pymuscle,errored,2.0,0.0
+ahmad-abdellatif/pyrrha-pynode,passed,1.0,1.0
+ahmad-abdellatif/python-bpe,errored,3.0,0.0
+ahmad-abdellatif/pytorch-wrapper,partially passed,3.0,2.0
+ahmad-abdellatif/pytreebank,partially passed,4.0,3.0
+ahmad-abdellatif/pyuplift,errored,3.0,0.0
+ahmad-abdellatif/pywsd,passed,1.0,1.0
+ahmad-abdellatif/QuCumber,,,
+ahmad-abdellatif/recoder,passed,1.0,1.0
+ahmad-abdellatif/regain,errored,2.0,1.0
+ahmad-abdellatif/robosat,errored,1.0,0.0
+ahmad-abdellatif/robot-surgery-segmentation,failed,2.0,0.0
+ahmad-abdellatif/rrcf,passed,1.0,1.0
+ahmad-abdellatif/sacremoses,passed,5.0,5.0
+ahmad-abdellatif/salad,errored,2.0,0.0
+ahmad-abdellatif/scattertext,passed,1.0,1.0
+ahmad-abdellatif/schnetpack,failed,2.0,0.0
+ahmad-abdellatif/scikit-garden,errored,1.0,0.0
+ahmad-abdellatif/scikit-multilearn,,,
+ahmad-abdellatif/scikit-optimize,passed,2.0,2.0
+ahmad-abdellatif/scitime,failed,1.0,0.0
+ahmad-abdellatif/seglearn,passed,3.0,3.0
+ahmad-abdellatif/seq2annotation,errored,2.0,0.0
+ahmad-abdellatif/serenata-de-amor,failed,1.0,0.0
+ahmad-abdellatif/setka,passed,1.0,1.0
+ahmad-abdellatif/shadho,errored,5.0,0.0
+ahmad-abdellatif/shapenet,errored,1.0,0.0
+ahmad-abdellatif/sherpa,passed,1.0,1.0
+ahmad-abdellatif/sigpy,failed,3.0,0.0
+ahmad-abdellatif/simple-image-classifier,failed,1.0,0.0
+ahmad-abdellatif/skggm,errored,1.0,0.0
+ahmad-abdellatif/sklearn-porter,partially passed,10.0,6.0
+ahmad-abdellatif/snips-nlu-metrics,partially passed,4.0,3.0
+ahmad-abdellatif/spacy-sentiws,failed,1.0,0.0
+ahmad-abdellatif/spacy_readability,errored,5.0,0.0
+ahmad-abdellatif/spampy,errored,4.0,0.0
+ahmad-abdellatif/sparse-structured-attention,passed,4.0,4.0
+ahmad-abdellatif/spotlight,errored,3.0,1.0
+ahmad-abdellatif/starboost,failed,1.0,0.0
+ahmad-abdellatif/stheno,failed,2.0,0.0
+ahmad-abdellatif/strava-wind-analysis-ml,errored,3.0,0.0
+ahmad-abdellatif/synthtorch,failed,1.0,0.0
+ahmad-abdellatif/syntok,failed,2.0,1.0
+ahmad-abdellatif/tangent,failed,3.0,0.0
+ahmad-abdellatif/tensorflow-rnn-ctc,errored,1.0,0.0
+ahmad-abdellatif/textpipe,failed,1.0,0.0
+ahmad-abdellatif/tfdiffeq,partially passed,4.0,2.0
+ahmad-abdellatif/timefhuman,passed,1.0,1.0
+ahmad-abdellatif/tindetheus,errored,3.0,0.0
+ahmad-abdellatif/torchgpipe,failed,11.0,0.0
+ahmad-abdellatif/transformer-lm,errored,1.0,0.0
+ahmad-abdellatif/uwreact_robot,failed,2.0,0.0
+ahmad-abdellatif/vecto,failed,1.0,0.0
+ahmad-abdellatif/Voice-based-gender-recognition,errored,1.0,0.0
+ahmad-abdellatif/w2n,passed,1.0,1.0
+ahmad-abdellatif/whatthelang,errored,2.0,0.0
+ahmad-abdellatif/wiki-dump-reader,partially passed,3.0,2.0
+ahmad-abdellatif/wukong-robot,failed,1.0,0.0
+ahmad-abdellatif/wwdata,passed,1.0,1.0
+ahmad-abdellatif/ZOOpt,passed,6.0,6.0
