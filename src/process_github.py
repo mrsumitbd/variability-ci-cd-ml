@@ -44,5 +44,23 @@ class ProcessGitHub(object):
         repo = self.g.get_repo(repo_name)
         return [branch.name for branch in list(repo.get_branches())]
 
+    def commit_level_info(self, repo_name): # test passing
+        """
+        :param repo_name: str -> <user>/<repo_name>
+        :return: tuple -> (total number of commits (int), commit details (dictionary))
+        """
+        repo = self.g.get_repo(repo_name)
+        commits = repo.get_commits()
+        commit_info = {}
+        for commit in commits:
+            if commit.commit is not None:
+                commit_info[commit.commit.sha] = (commit.commit.message, [file.filename for file in commit.files])
+        return commits.totalCount, commit_info
+
+
     def __del__(self):
         print("Deleting object... Done!")
+
+# if __name__=='__main__':
+#     gh_obj = ProcessGitHub("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")
+#     gh_obj.commit_level_info("arsalan0c/mailsense")

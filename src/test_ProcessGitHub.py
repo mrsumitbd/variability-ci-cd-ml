@@ -7,7 +7,7 @@ class TestProcessGitHub(unittest.TestCase):
     maxDiff = None
 
     def setUp(self):
-        self.process_gh = ProcessGitHub("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")
+        self.process_gh = ProcessGitHub("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")
 
     def tearDown(self):
         del self.process_gh
@@ -55,7 +55,12 @@ after_success: codecov
         self.assertEqual(self.process_gh.read_file_contents("prince", ".travis.yml"), test_contents)
 
     def test_list_branches(self):
-        self.assertEqual(self.process_gh.list_branches("ahmad-abdellatif/3D-convolutional-speaker-recognition"), ['master'])
+        self.assertEqual(self.process_gh.list_branches("ahmad-abdellatif/3D-convolutional-speaker-recognition"),
+                         ['master'])
+
+    def test_get_commit_level_info(self):
+        returned_data = self.process_gh.commit_level_info("arsalan0c/mailsense")
+        self.assertEqual(returned_data[0], len(returned_data[1]))
 
 
 if __name__ == '__main__':
